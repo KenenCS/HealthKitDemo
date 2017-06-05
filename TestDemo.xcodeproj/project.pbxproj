@@ -13,6 +13,8 @@
 		6C7CBFEB1EE5516300C3F136 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C7CBFE91EE5516300C3F136 /* Main.storyboard */; };
 		6C7CBFED1EE5516300C3F136 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C7CBFEC1EE5516300C3F136 /* Assets.xcassets */; };
 		6C7CBFF01EE5516300C3F136 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C7CBFEE1EE5516300C3F136 /* LaunchScreen.storyboard */; };
+		6C7CBFF91EE5518F00C3F136 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C7CBFF81EE5518F00C3F136 /* HealthKit.framework */; };
+		6C7CBFFD1EE551C800C3F136 /* HealthKitManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7CBFFC1EE551C800C3F136 /* HealthKitManage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		6C7CBFEC1EE5516300C3F136 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6C7CBFEF1EE5516300C3F136 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6C7CBFF11EE5516300C3F136 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6C7CBFF81EE5518F00C3F136 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		6C7CBFFA1EE5518F00C3F136 /* TestDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TestDemo.entitlements; sourceTree = "<group>"; };
+		6C7CBFFB1EE551C800C3F136 /* HealthKitManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthKitManage.h; sourceTree = "<group>"; };
+		6C7CBFFC1EE551C800C3F136 /* HealthKitManage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthKitManage.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C7CBFF91EE5518F00C3F136 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +51,7 @@
 			children = (
 				6C7CBFDF1EE5516300C3F136 /* TestDemo */,
 				6C7CBFDE1EE5516300C3F136 /* Products */,
+				6C7CBFF71EE5518F00C3F136 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,10 +66,13 @@
 		6C7CBFDF1EE5516300C3F136 /* TestDemo */ = {
 			isa = PBXGroup;
 			children = (
+				6C7CBFFA1EE5518F00C3F136 /* TestDemo.entitlements */,
 				6C7CBFE31EE5516300C3F136 /* AppDelegate.h */,
 				6C7CBFE41EE5516300C3F136 /* AppDelegate.m */,
 				6C7CBFE61EE5516300C3F136 /* ViewController.h */,
 				6C7CBFE71EE5516300C3F136 /* ViewController.m */,
+				6C7CBFFB1EE551C800C3F136 /* HealthKitManage.h */,
+				6C7CBFFC1EE551C800C3F136 /* HealthKitManage.m */,
 				6C7CBFE91EE5516300C3F136 /* Main.storyboard */,
 				6C7CBFEC1EE5516300C3F136 /* Assets.xcassets */,
 				6C7CBFEE1EE5516300C3F136 /* LaunchScreen.storyboard */,
@@ -77,6 +88,14 @@
 				6C7CBFE11EE5516300C3F136 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6C7CBFF71EE5518F00C3F136 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6C7CBFF81EE5518F00C3F136 /* HealthKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -110,8 +129,12 @@
 				TargetAttributes = {
 					6C7CBFDC1EE5516300C3F136 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = 7UJWTELDJ6;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -154,6 +177,7 @@
 				6C7CBFE81EE5516300C3F136 /* ViewController.m in Sources */,
 				6C7CBFE51EE5516300C3F136 /* AppDelegate.m in Sources */,
 				6C7CBFE21EE5516300C3F136 /* main.m in Sources */,
+				6C7CBFFD1EE551C800C3F136 /* HealthKitManage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,7 +295,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 7UJWTELDJ6;
+				CODE_SIGN_ENTITLEMENTS = TestDemo/TestDemo.entitlements;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = TestDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kenen.TestDemo;
@@ -283,7 +308,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 7UJWTELDJ6;
+				CODE_SIGN_ENTITLEMENTS = TestDemo/TestDemo.entitlements;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = TestDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kenen.TestDemo;
@@ -310,6 +336,7 @@
 				6C7CBFF61EE5516300C3F136 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
